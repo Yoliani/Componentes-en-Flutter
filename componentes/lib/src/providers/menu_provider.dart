@@ -8,13 +8,13 @@ class _MenuProvider {
     cargarData();
   }
 
-  cargarData() {
-    rootBundle.loadString('data/menu_opts.json').then((data) {
-      Map dataMap = json.decode(data);
-      //print(data);
-      print(dataMap['rutas']);
-      opciones = dataMap['rutas'];
-    });
+  cargarData() async {
+    final resp = await rootBundle.loadString('data/menu_opts.json');
+    Map dataMap = json.decode(resp);
+    //print(data);
+    print(dataMap['rutas']);
+    opciones = dataMap['rutas'];
+    return opciones;
   }
 }
 
