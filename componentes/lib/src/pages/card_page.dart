@@ -8,8 +8,14 @@ class CardPage extends StatelessWidget {
         title: Text('Cards'),
       ),
       body: ListView(
-        children: <Widget>[_cardTipo1()],
         padding: EdgeInsets.symmetric(horizontal: 50.0, vertical: 10.0),
+        children: <Widget>[
+          _cardTipo1(),
+          SizedBox(
+            height: 30.0,
+          ),
+          _cardTipo2(),
+        ],
       ),
     );
   }
@@ -31,6 +37,31 @@ class CardPage extends StatelessWidget {
               TextButton(onPressed: () {}, child: Text('Cancelar')),
               TextButton(onPressed: () {}, child: Text('Ok'))
             ],
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget _cardTipo2() {
+    return Card(
+      child: Column(
+        children: <Widget>[
+          FadeInImage(
+            image: NetworkImage(
+                'https://static.vecteezy.com/system/resources/previews/000/246/312/original/mountain-lake-sunset-landscape-first-person-view-vector.jpg'),
+            placeholder: AssetImage('assets/jar-loading.gif'),
+            fadeInDuration: Duration(milliseconds: 200),
+            height: 300.0,
+            fit: BoxFit.cover,
+          ),
+          // Image(
+          //   image: NetworkImage(
+          //       'https://static.vecteezy.com/system/resources/previews/000/246/312/original/mountain-lake-sunset-landscape-first-person-view-vector.jpg'),
+          // ),
+          Container(
+            padding: EdgeInsets.all(10.0),
+            child: Text('No tengo idea'),
           )
         ],
       ),
