@@ -11,9 +11,19 @@ class CardPage extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 50.0, vertical: 10.0),
         children: <Widget>[
           _cardTipo1(),
-          SizedBox(
-            height: 30.0,
-          ),
+          SizedBox(height: 30.0),
+          _cardTipo2(),
+          SizedBox(height: 30.0),
+          _cardTipo1(),
+          SizedBox(height: 30.0),
+          _cardTipo2(),
+          SizedBox(height: 30.0),
+          _cardTipo1(),
+          SizedBox(height: 30.0),
+          _cardTipo2(),
+          SizedBox(height: 30.0),
+          _cardTipo1(),
+          SizedBox(height: 30.0),
           _cardTipo2(),
         ],
       ),
@@ -22,6 +32,10 @@ class CardPage extends StatelessWidget {
 
   Widget _cardTipo1() {
     return Card(
+      //Sombra en los bordes
+      elevation: 10.0,
+      //
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
       child: Column(
         children: <Widget>[
           ListTile(
@@ -44,7 +58,9 @@ class CardPage extends StatelessWidget {
   }
 
   Widget _cardTipo2() {
-    return Card(
+    final card = Container(
+      //clipBehavior: Clip.antiAlias,
+
       child: Column(
         children: <Widget>[
           FadeInImage(
@@ -52,6 +68,7 @@ class CardPage extends StatelessWidget {
                 'https://static.vecteezy.com/system/resources/previews/000/246/312/original/mountain-lake-sunset-landscape-first-person-view-vector.jpg'),
             placeholder: AssetImage('assets/jar-loading.gif'),
             fadeInDuration: Duration(milliseconds: 200),
+            width: 400.0,
             height: 300.0,
             fit: BoxFit.cover,
           ),
@@ -64,6 +81,26 @@ class CardPage extends StatelessWidget {
             child: Text('No tengo idea'),
           )
         ],
+      ),
+    );
+
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(30.0),
+        //color: Colors.red,
+        boxShadow: <BoxShadow>[
+          BoxShadow(
+            color: Colors.black26,
+            blurRadius: 10.0,
+            spreadRadius: 12,
+            offset: Offset(2.0, 10.0),
+          )
+        ],
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(30.0),
+        child: card,
       ),
     );
   }
