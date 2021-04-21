@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 
 import 'src/pages/alert_page.dart';
 
+//Importar Internationalizing
+import 'package:flutter_localizations/flutter_localizations.dart';
+
 //Rutas
 import 'src/routes/routes.dart';
 
@@ -13,6 +16,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+
       title: 'Componentes APP',
       //home: HomePage(),
       initialRoute: '/',
