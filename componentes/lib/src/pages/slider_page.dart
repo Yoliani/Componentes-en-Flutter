@@ -50,8 +50,7 @@ class _SliderPageState extends State<SliderPage> {
 
   Widget _crearImagen() {
     return Image(
-      image: NetworkImage(
-          'https://lh3.googleusercontent.com/proxy/K3YDvlax-2f1Jl0-WnQQLgNghzJwD6RTYvvM2osMzA9mzwGTRJvx4aRCcL8RUT2qlO1HjbGwDvbcJBdjP6Y9_hQsfRSnjx6QUMyUQ9z1Vo8zlnfmIW5KQknZgqz7IhP-Bydo65-Y7dnJnxNObLE9Cz9C'),
+      image: NetworkImage('http://pngimg.com/uploads/batman/batman_PNG111.png'),
       width: _valorSlider,
       fit: BoxFit.contain,
     );
