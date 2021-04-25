@@ -50,7 +50,9 @@ class _SliderPageState extends State<SliderPage> {
 
   Widget _crearImagen() {
     return Image(
-      image: NetworkImage('http://pngimg.com/uploads/batman/batman_PNG111.png'),
+      image:
+          //Se debe usar https no http
+          NetworkImage('https://pngimg.com/uploads/batman/batman_PNG111.png'),
       width: _valorSlider,
       fit: BoxFit.contain,
     );
